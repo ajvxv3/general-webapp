@@ -39,5 +39,6 @@ Thumbs.db
 # Added files #
 #######################
 .project
+.classpath
 .settings/*
 target/*
