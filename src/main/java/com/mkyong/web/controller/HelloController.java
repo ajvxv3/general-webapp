@@ -12,8 +12,11 @@ public class HelloController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
-
-		model.addAttribute("message", "Spring 3 MVC Hello World");
+		//model = loadDashboard();
+		model.addAttribute("ToDoItem1", "Beatdown madness chaos in the brain.");
+		model.addAttribute("ToDoItem2", "Judge the phoneys.");
+		model.addAttribute("ToDoItem3", "Repent my sins.");
+		//model.addAttribute("message", "Spring 3 MVC Hello World");
 		return "hello";
 
 	}
@@ -24,9 +27,15 @@ public class HelloController {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("hello");
 		model.addObject("msg", name);
-
+		
 		return model;
 
 	}
-
+	public ModelMap loadDashboard(){
+		ModelMap model = new ModelMap();
+		model.addAttribute("ToDOItem1", "Beatdown madness chaos in the brain.");
+		model.addAttribute("ToDOItem2", "Judge the phoneys.");
+		model.addAttribute("ToDOItem3", "Repent my sins.");
+		return model;
+	}
 }
